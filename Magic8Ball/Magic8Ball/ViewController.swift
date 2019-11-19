@@ -20,9 +20,19 @@ class ViewController: UIViewController {
     }
 
     @IBAction func shakeButtonTapped(_ sender: Any) {
-        let randomIndex = Int.random(in: 0..<answers.count)
-        answerLabel.text = answers[randomIndex]
+        generateAnswer()
     }
     
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        guard motion == .motionShake else { return }
+        
+        generateAnswer()
+    }
+    
+    func generateAnswer() {
+        let randomIndex = Int.random(in: 0..<answers.count)
+
+        answerLabel.text = answers[randomIndex]
+    }
 }
 
