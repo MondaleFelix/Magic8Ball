@@ -18,6 +18,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func shakeButtonTapped(_ sender: Any) {
+        print("This is coming from the shake button")
+    }
+    
 }
 
